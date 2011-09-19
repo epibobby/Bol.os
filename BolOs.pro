@@ -29,22 +29,3 @@ OTHER_FILES += \
     image/abstract_0092.jpg \
     image/abstract_0093.jpg
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
