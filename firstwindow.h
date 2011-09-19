@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "createcount.h"
+#include "mainwindow.h"
 
 namespace Ui {
     class FirstWindow;

@@ -21,6 +21,9 @@ void FirstWindow::on_pushButton_Ok_clicked()
     std::cout << "PASS :" << this->ui->Password->text().toStdString() << std::endl;
     this->Username = this->ui->Username->text().toStdString();
     this->Password = this->ui->Password->text().toStdString();
+    this->hide();
+    mainwindow MainView;
+    MainView.exec();
 }
 
 
