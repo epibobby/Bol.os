@@ -12,8 +12,7 @@ TEMPLATE = app
 
 SOURCES += main.cpp \
     firstwindow.cpp \
-    createcount.cpp \
-    test_lucere_r.cpp
+    createcount.cpp
 
 HEADERS  += \
     firstwindow.h \
@@ -26,6 +25,7 @@ FORMS    += \
 OTHER_FILES += \
     image/abstract_0092.jpg \
     image/abstract_0093.jpg
+
 
 
 
