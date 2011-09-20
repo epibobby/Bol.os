@@ -1,4 +1,4 @@
-Bolos 1.0
+Bolos BETA
 
 Lecteur de (Multi)Media Communautaire - L.M.C BoLos
 
