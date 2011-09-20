@@ -4,15 +4,23 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+ TARGET = Client
+ TEMPLATE = app
+ FORMS    += client.ui
+ HEADERS       = client.h
+ SOURCES       = client.cpp \
+                 main.cpp
+ QT           += network
+ QT           += core gui
+ # install
+ target.path = $$[QT_INSTALL_EXAMPLES]/network/fortuneclient
+ sources.files = $$SOURCES $$HEADERS $$RESOURCES $$FORMS fortuneclient.pro
+ sources.path = $$[QT_INSTALL_EXAMPLES]/network/fortuneclient
+ INSTALLS += target sources
 
-TARGET = Client
-TEMPLATE = app
+ symbian {
+     include($$QT_SOURCE_TREE/examples/symbianpkgrules.pri)
+     TARGET.CAPABILITY = "NetworkServices ReadUserData WriteUserData"
+     TARGET.EPOCHEAPSIZE = 0x20000 0x2000000
+ }
 
-
-SOURCES += main.cpp\
-        client.cpp
-
-HEADERS  += client.h
-
-FORMS    += client.ui
