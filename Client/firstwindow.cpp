@@ -47,8 +47,7 @@ void FirstWindow::requestNewFortune()
     int port = 4242;
     blockSize = 0;
     tcpSocket->abort();
-    tcpSocket->connectToHost("10.17.72.181",
-                             port);
+    tcpSocket->connectToHost("10.17.72.181", port);
 }
 
 void FirstWindow::readFortune()
@@ -59,13 +58,10 @@ void FirstWindow::readFortune()
     if (blockSize == 0) {
         if (tcpSocket->bytesAvailable() < (int)sizeof(quint16))
             return;
-
         in >> blockSize;
     }
-
     if (tcpSocket->bytesAvailable() < blockSize)
         return;
-
     QString nextFortune;
     in >> nextFortune;
 
@@ -73,7 +69,6 @@ void FirstWindow::readFortune()
         QTimer::singleShot(0, this, SLOT(requestNewFortune()));
         return;
     }
-
     currentFortune = nextFortune;
     std::cout << "Received = :" << currentFortune.toStdString() << std::endl;
     // CREATION FENETRE PRINCIPALE
