@@ -1,36 +1,46 @@
-Bolos 1.0
+Bolos 0.1
 
-Lecteur de (Multi)Media Communautaire - L.M.C BoLos
+Lecteur (Multi)Media Communautaire - L.M.C BoLos
 
 - Mode Offline
-	*consulter la liste de ses media et les fiches associes.
+       * Lecture de films de sa bibliothèque locale.
+       * consulter la liste de ses media et les fiches associées.
 
-- Update de la Base server
-	*Update de la base de donnees Films.
+- Mode Online
+       * Mise à jour des fiches des films.
 
-- Chat
+-Base de données ???
 
 - Movies
 
-   * librairie
-   * notation
-   * commentaires
-   * randomisation
+   * bibliothèque.
+   * afficher fiche de film.
+   * recherche fiche (local ou server)
+   * randomisation / proposer film selon gout utilisateur.
    * lecteur
-   * moteur de recherches
-   * recommander a un ami
+     -Fiche movie
+	  * recommander a un ami
+  	  * commentaires
+	  * notation film
+	  * lien channel film (create ou join)
 
 
-
-- Messagerie instantane
-
-	* envoi fichier
-	* envoi mail
+- Messagerie instantane IRC
+  	     * chat channel film
+	     * dcc chat
+	     * dcc send file
+-Community
+	*liste amis
+	*status
+	*"fenêtres" channels actuellement actifs.
+	* barre d'options en bas (interaction possible avec l'
+	        ami séléctionné OU interaction(join) + info sur channel(nom, nb personne...)).	 
 
 - Profil
-	* Planning
-	* favorite
-	* option 
-		#avatar
-		#pseudo
-		#ami
+	* Nom
+	* Prenom
+	* pseudo
+	* email
+	* avatar 
+	* favoris (liste lien films selon note >4)
+	* planning
