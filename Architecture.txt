@@ -1,0 +1,13 @@
+								L.M.C
+
+common/ -> tout ce qui est commun a l'application
+
+server/src -> les sources du serveur
+
+client/src -> les sources du client
+
+client/resources -> les ressources du client (images, son ...)
+
+test/ -> Repertoire de test, comme sa les executable et tout les fichier QT de compilation reste dans test, de plus nos repertoire server/ et client/ reste clean
+
+test/server -> repertoire de test pour le server
