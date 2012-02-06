@@ -14,7 +14,7 @@ class ConnectionSettings : public QDialog
 public:
     explicit ConnectionSettings(QWidget *parent = 0);
     ~ConnectionSettings();
-    QString getServer() const;
+    QString getHost() const;
     QString getPort() const;
 
 private slots:
@@ -24,7 +24,7 @@ private slots:
 
 private:
     Ui::ConnectionSettings *ui;
-    QString _server;
+    QString _host;
     QString _port;
 };
 

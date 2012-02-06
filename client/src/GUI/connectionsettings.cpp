@@ -18,9 +18,9 @@ ConnectionSettings::~ConnectionSettings()
     delete ui;
 }
 
-QString ConnectionSettings::getServer() const
+QString ConnectionSettings::getHost() const
 {
-    return _server;
+    return _host;
 }
 QString ConnectionSettings::getPort() const
 {
@@ -28,9 +28,9 @@ QString ConnectionSettings::getPort() const
 }
 void ConnectionSettings::on_Ok_clicked()
 {
-    _server = ui->Server->text();
+    _host = ui->Server->text();
     _port = ui->Port->text();
-    if (_server != "" && _port != "")
+    if (_host != "" && _port != "")
         this->hide();
 }
 
