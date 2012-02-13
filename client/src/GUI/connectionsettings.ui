@@ -23,7 +23,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>10.17.71.185</string>
+    <string>10.17.70.141</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="Port">
@@ -36,7 +36,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>30100</string>
+    <string>4242</string>
    </property>
   </widget>
   <widget class="QPushButton" name="Ok">
