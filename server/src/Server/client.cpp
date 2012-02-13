@@ -10,14 +10,14 @@ QTcpSocket  *client::getSock() const
     return sock;
 }
 
-void    client::setName(QString nam)
+void    client::setToken(QString tok)
 {
- name = nam;
+ token = tok;
 }
 
-QString client::getName() const
+QString client::getToken() const
 {
-    return name;
+    return token;
 }
 
 void    client::setIp(QHostAddress IP)

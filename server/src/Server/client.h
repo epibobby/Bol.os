@@ -12,13 +12,13 @@ public:
     ~client() { }
     void        setSock(QTcpSocket *socket);
     QTcpSocket  *getSock() const;
-    void        setName(QString nam);
-    QString     getName() const;
+    void        setToken(QString tok);
+    QString     getToken() const;
     void        setIp(QHostAddress IP);
     QString     getIp() const;
 
 private:
-    QString name;
+    QString token;
     QTcpSocket* sock;
     QString ip;
 };
