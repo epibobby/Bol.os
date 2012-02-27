@@ -1,7 +1,0 @@
-HEADERS += \
-    Protocole.h
-
-
-
-
-
