@@ -13,6 +13,8 @@ INPUT(
 ./debug/myglwidget.o
 ./debug/mywindow.o
 ./debug/stackedwidgetmovienews.o
+./debug/apimovie.o
+./debug/jsonparser.o
 ./debug/moc_logonwindow.o
 ./debug/moc_connectionsettings.o
 ./debug/moc_createcount.o
@@ -24,5 +26,7 @@ INPUT(
 ./debug/moc_myglwidget.o
 ./debug/moc_mywindow.o
 ./debug/moc_stackedwidgetmovienews.o
+./debug/moc_jsonparser.o
+./debug/moc_apimovie.o
 ./debug/qrc_mediaplayer.o
 );

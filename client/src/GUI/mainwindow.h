@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 
+#include "../API/apimovie.h"
 #include "lmc.h"
 #include "clientconnection.h"
 #include "mediaplayer.h"
@@ -33,12 +34,15 @@ private slots:
 
     void on_actionExit_triggered();
 
+    void IncomingSheet(QList<QMap<QString, QString> >);
+
 private:
     Ui::MainWindow *ui;
     ClientConnection   *_client;
     LMC                *_LMC;
     MediaPlayer        *_player;
     StackedWidgetMovieNews *_SWMN;
+    ApiMovie *_api;
 };
 
 #endif // MAINWINDOW_H

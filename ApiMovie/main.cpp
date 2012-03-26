@@ -9,11 +9,11 @@ int main(int argc, char *argv[])
     QStringList listMovie;
 
     qDebug() << "main";
-    listMovie = api.loadLibrary("C:\\Users\\bertuc_k\\Downloads");
-    foreach (QString movie, listMovie)
-    {
-        qDebug() << movie;
-    }
-    //api.requestASheet("Edward", true);
+//    listMovie = api.loadLibrary("C:\\Users\\bertuc_k\\Downloads");
+//    foreach (QString movie, listMovie)
+//    {
+//        qDebug() << movie;
+//    }
+    api.requestASheet("heat");
     return a.exec();
 }

@@ -30,7 +30,7 @@ private:
     void requestApi(QUrl url);
     void JsonSheetToObject(QByteArray sheet);
 signals:
-    void found();
+    void found(QList<QMap<QString, QString> >);
     void JsonReady();
 public slots:
     void remoteAnswer(QNetworkReply *reply);

@@ -89,7 +89,7 @@ void ApiMovie::JsonSheetToObject(QByteArray sheet)
         }
     }
     qDebug() << "a tout fini";
-    emit found();
+    emit found(obj);
 }
 
 

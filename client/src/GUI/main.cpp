@@ -1,5 +1,6 @@
 #include <QtGui/QApplication>
 #include "logonwindow.h"
+#include "../API/apimovie.h"
 
 int main(int argc, char *argv[])
 {

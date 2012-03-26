@@ -11,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     _LMC = new LMC(this);
+    _api = new ApiMovie();
     _SWMN = new StackedWidgetMovieNews(this);
     _SWMN->move(30, 360);
     QRect resolution = QApplication::desktop()->screenGeometry();
@@ -25,11 +26,26 @@ MainWindow::MainWindow(QWidget *parent) :
    // connect(ui->PlayDayMovie, SIGNAL(clicked()), signalMapper2, SLOT(map()));
    // signalMapper2->setMapping(ui->PlayDayMovie, 2);
    // connect(signalMapper2, SIGNAL(mapped(int)), this, SLOT(_slotLMC(int)));
+    connect(_api, SIGNAL(found(QList<QMap<QString, QString> >)), this, SLOT(IncomingSheet(QList<QMap<QString, QString> >)));
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::IncomingSheet(QList<QMap<QString, QString> > list)
+{
+    while(!list.isEmpty())
+       {
+           QMap<QString,QString> map = list.first();
+           list.pop_front();
+           QMapIterator<QString, QString> i(map);
+           while (i.hasNext()) {
+               i.next();
+               qDebug() << i.key() << ": " << i.value() << endl;
+           }
+       }
 }
 
 void MainWindow::initPlayer()
@@ -63,6 +79,7 @@ void MainWindow::setClient(ClientConnection *client)
 
 void MainWindow::_slotLMC(int id)
 {
+    _api->requestASheet("heat");
     std::cout << "id = " << id << std::endl;
     switch (id) {
         case 1 : _LMC->on_AddYourLibrary_clicked(); break;

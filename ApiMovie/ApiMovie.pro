@@ -17,8 +17,13 @@ HEADERS += \
     apimovie.h \
     jsonparser.h
 
+INCLUDEPATH += $$PWD/../../Work/utils/src
+DEPENDPATH += $$PWD/../../Work/utils/src
 
-unix:!macx:!symbian|win32: LIBS += -L$$PWD/../../../../qjson-build-desktop-Qt_4_8_0_for_Desktop_-_MSVC2010__Qt_SDK__Release/lib/ -lqjson0
+unix:!macx:!symbian|win32: LIBS += -L$$PWD/../../Work/utils/lib/ -lqjson0
 
-INCLUDEPATH += $$PWD/../../../../qjson/src
-DEPENDPATH += $$PWD/../../../../qjson/src
+INCLUDEPATH += $$PWD/../../Work/utils/include
+DEPENDPATH += $$PWD/../../Work/utils/include
+
+win32: PRE_TARGETDEPS += $$PWD/../../Work/utils/lib/qjson0.lib
+else:unix:!macx:!symbian: PRE_TARGETDEPS += $$PWD/../../Work/utils/lib/libqjson0.a

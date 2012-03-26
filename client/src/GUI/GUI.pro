@@ -8,7 +8,10 @@ QT       += core gui
 QT       += network
 QT       += opengl
 QT       += phonon
+QT       += xml
 
+CONFIG   += console
+CONFIG   -= app_bundle
 
 TARGET = GUI
 TEMPLATE = app
@@ -31,7 +34,9 @@ SOURCES += main.cpp\
     autoshutdown.cpp \
     myglwidget.cpp \
     mywindow.cpp \
-    stackedwidgetmovienews.cpp
+    stackedwidgetmovienews.cpp \
+    ../API/apimovie.cpp \
+    ../API/jsonparser.cpp
 
 HEADERS  += logonwindow.h \
     connectionsettings.h \
@@ -46,7 +51,9 @@ HEADERS  += logonwindow.h \
     myglwidget.h \
     mywindow.h \
     stackedwidgetmovienews.h \
-    mainwindow.h
+    mainwindow.h \
+    ../API/jsonparser.h \
+    ../API/apimovie.h
 
 FORMS    += logonwindow.ui \
     connectionsettings.ui \
@@ -76,39 +83,17 @@ FORMS    += logonwindow.ui \
  }
 
 OTHER_FILES += \
-    images/screen.png
+    images/screen.png \
+    ../API/ApiMovie.pro.user
 
 
+INCLUDEPATH += $$PWD/../../../../Work/utils/src
+DEPENDPATH += $$PWD/../../../../Work/utils/src
 
+unix:!macx:!symbian|win32: LIBS += -L$$PWD/../../../../Work/utils/lib/ -lqjson0
 
+INCLUDEPATH += $$PWD/../../../../Work/utils/include
+DEPENDPATH += $$PWD/../../../../Work/utils/include
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+win32: PRE_TARGETDEPS += $$PWD/../../../../Work/utils/lib/qjson0.lib
+else:unix:!macx:!symbian: PRE_TARGETDEPS += $$PWD/../../../../Work/utils/lib/libqjson0.a

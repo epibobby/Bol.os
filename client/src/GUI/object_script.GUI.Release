@@ -13,6 +13,8 @@ INPUT(
 ./release/myglwidget.o
 ./release/mywindow.o
 ./release/stackedwidgetmovienews.o
+./release/apimovie.o
+./release/jsonparser.o
 ./release/moc_logonwindow.o
 ./release/moc_connectionsettings.o
 ./release/moc_createcount.o
@@ -24,5 +26,7 @@ INPUT(
 ./release/moc_myglwidget.o
 ./release/moc_mywindow.o
 ./release/moc_stackedwidgetmovienews.o
+./release/moc_jsonparser.o
+./release/moc_apimovie.o
 ./release/qrc_mediaplayer.o
 );
