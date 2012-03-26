@@ -8,6 +8,7 @@
 #include "clientconnection.h"
 #include "mediaplayer.h"
 #include "stackedwidgetmovienews.h"
+#include "searchwidget.h"
 
 class LMC;
 
@@ -37,12 +38,13 @@ private slots:
     void IncomingSheet(QList<QMap<QString, QString> >);
 
 private:
-    Ui::MainWindow *ui;
-    ClientConnection   *_client;
-    LMC                *_LMC;
-    MediaPlayer        *_player;
-    StackedWidgetMovieNews *_SWMN;
-    ApiMovie *_api;
+    Ui::MainWindow          *ui;
+    ClientConnection        *_client;
+    LMC                     *_LMC;
+    MediaPlayer             *_player;
+    StackedWidgetMovieNews  *_SWMN;
+    ApiMovie                *_api;
+    SearchWidget            *_searchWidget;
 };
 
 #endif // MAINWINDOW_H

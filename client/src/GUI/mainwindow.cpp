@@ -13,6 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     _LMC = new LMC(this);
     _api = new ApiMovie();
     _SWMN = new StackedWidgetMovieNews(this);
+    _searchWidget = new SearchWidget();
     _SWMN->move(30, 360);
     QRect resolution = QApplication::desktop()->screenGeometry();
     move((resolution.width()*15)/100, (resolution.height()*3)/100);
@@ -59,6 +60,7 @@ void MainWindow::initPlayer()
     _player->move(0,0);
     _player->setMinimumSize(100, 300);
     ui->tabWidget->insertTab(2, _player, "Media Player");
+    ui->tabWidget->insertTab(3, _searchWidget, "Search");
     _player->setSmallScreen(smallScreen);
     if (smallScreen)
        _player->showMaximized();

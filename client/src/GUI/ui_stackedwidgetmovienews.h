@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'stackedwidgetmovienews.ui'
 **
-** Created: Mon 26. Mar 17:29:26 2012
+** Created: Mon 26. Mar 21:35:10 2012
 **      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -85,7 +85,7 @@ public:
         RateMinuteMovieLabel->setFont(font2);
         GoodMinuteMovieImg = new QLabel(page);
         GoodMinuteMovieImg->setObjectName(QString::fromUtf8("GoodMinuteMovieImg"));
-        GoodMinuteMovieImg->setGeometry(QRect(250, 160, 41, 41));
+        GoodMinuteMovieImg->setGeometry(QRect(270, 160, 41, 41));
         GoodMinuteMovieImg->setPixmap(QPixmap(QString::fromUtf8("../../resources/images/good mini.gif")));
         LMCMinuteMovie = new QPushButton(page);
         LMCMinuteMovie->setObjectName(QString::fromUtf8("LMCMinuteMovie"));

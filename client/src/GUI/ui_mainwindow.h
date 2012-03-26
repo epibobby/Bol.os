@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'mainwindow.ui'
 **
-** Created: Mon 26. Mar 17:29:26 2012
+** Created: Mon 26. Mar 22:12:47 2012
 **      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -420,7 +420,7 @@ public:
 
         retranslateUi(MainWindow);
 
-        tabWidget->setCurrentIndex(2);
+        tabWidget->setCurrentIndex(0);
         stackedWidget1->setCurrentIndex(0);
         stackedWidget2->setCurrentIndex(1);
 

@@ -117,7 +117,7 @@
    <widget class="QLabel" name="GoodMinuteMovieImg">
     <property name="geometry">
      <rect>
-      <x>250</x>
+      <x>270</x>
       <y>160</y>
       <width>41</width>
       <height>41</height>

@@ -15,6 +15,7 @@ INPUT(
 ./debug/stackedwidgetmovienews.o
 ./debug/apimovie.o
 ./debug/jsonparser.o
+./debug/searchwidget.o
 ./debug/moc_logonwindow.o
 ./debug/moc_connectionsettings.o
 ./debug/moc_createcount.o
@@ -28,5 +29,6 @@ INPUT(
 ./debug/moc_stackedwidgetmovienews.o
 ./debug/moc_jsonparser.o
 ./debug/moc_apimovie.o
+./debug/moc_searchwidget.o
 ./debug/qrc_mediaplayer.o
 );
