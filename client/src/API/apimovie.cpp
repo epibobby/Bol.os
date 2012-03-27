@@ -19,11 +19,11 @@ void ApiMovie::requestASheet(QString search, bool person)
 {
     qDebug() << "requestASheet";
     QByteArray sheet;
-    sheet = localSearch(search);
-    if (sheet.isEmpty())
+//    sheet = localSearch(search);
+//    if (sheet.isEmpty())
         remoteSearch(search, person);
-    else
-        JsonSheetToObject(sheet);
+//    else
+//        JsonSheetToObject(sheet);
 }
 
 QByteArray ApiMovie::localSearch(QString search)
@@ -54,12 +54,28 @@ void ApiMovie::remoteSearch(QString search, bool person)
 {
     qDebug() << "remoteSearch(";
     QString function;
-    search = search.replace(QRegExp("\\s+"), "+");
-    if (person)
-        function = "http://api.themoviedb.org/3/search/person?api_key=" + (*authKey) + "&query=";
+    if (search[0] != '#')
+        search = search.replace(QRegExp("\\s+"), "+");
+    if (person && search[0] != '#')
+        function = "http://api.themoviedb.org/3/search/person?api_key=" + (*authKey) + "&query=" + search;
+    else if (search[0] == '#')
+    {
+        search = search.remove(0, 1);
+        if (person)
+    {
+           function = "http://api.themoviedb.org/3/person/"+ search + "?api_key=" + (*authKey);
+
+        }
+        else
+        function = "http://api.themoviedb.org/2.1/Movie.getInfo/en/json/" + (*authKey) + "/" + search;
+    }
     else
-        function = "http://api.themoviedb.org/2.1/Movie.search/en/json/" + (*authKey) + "/";
-    net->get(QNetworkRequest(QUrl(function + search)));
+        function = "http://api.themoviedb.org/2.1/Movie.search/en/json/" + (*authKey) + "/" + search;
+
+    qDebug() << function;
+    net->get(QNetworkRequest(QUrl(function )));
+
+    //net->get(QNetworkRequest(QUrl(function)));
 }
 
 void ApiMovie::remoteAnswer(QNetworkReply *reply)
@@ -89,13 +105,14 @@ void ApiMovie::JsonSheetToObject(QByteArray sheet)
         }
     }
     qDebug() << "a tout fini";
+    this->jsonparse->dumpSheet(obj);
     emit found(obj);
 }
 
 
 QStringList ApiMovie::loadLibrary(QString path)
 {
-    QFileInfo libDir("./index");
+//    QFileInfo libDir("./index");
     QDir lib;
     QStringList filters;
     QStringList listMovies;

@@ -17,6 +17,7 @@ class JsonParser : public QObject
 public:
     JsonParser();
     QList<QMap <QString, QString> >    parseSheet(QByteArray result);
+    void dumpSheet(QList<QMap<QString, QString> > objRet);
 };
 
 #endif // JSONPARSER_H
