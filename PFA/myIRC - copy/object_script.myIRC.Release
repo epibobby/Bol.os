@@ -1,0 +1,15 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\mySession.o
+./release\userInputHandler.o
+./release\mainwindowcontroller.o
+./release\myirc.o
+./release\channel.o
+./release\moc_mainwindow.o
+./release\moc_mySession.o
+./release\moc_userInputHandler.o
+./release\moc_mainwindowcontroller.o
+./release\moc_myirc.o
+./release\moc_channel.o
+);
