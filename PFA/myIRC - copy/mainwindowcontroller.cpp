@@ -21,6 +21,7 @@ MainWindowController::MainWindowController(QObject *o)
 
        //No close Button for this tab.
     QList<QAbstractButton*> allPButtons = navTab->findChildren<QAbstractButton*>();
+
     for (int ind = 0; ind < allPButtons.size(); ind++) {
         QAbstractButton* item = allPButtons.at(ind);
         if (item->inherits("CloseButton"))

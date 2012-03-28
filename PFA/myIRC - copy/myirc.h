@@ -10,17 +10,20 @@
 #include <QTextEdit>
 #include <QStringBuilder>
 #include <QList>
+#include <QAction>
 
+//using namespace Ui;
 class MainWindow;
 class UserInputHandler;
 class MySession;
 class MainWindowController;
+
 #include "userInputHandler.h"
 #include "mySession.h"
 #include "mainwindowcontroller.h"
 #include "mainwindow.h"
 
-class MyIRC : public QObject
+class MyIRC : public QMainWindow
 {
     Q_OBJECT
 public:
@@ -33,7 +36,6 @@ private:
 
 public:
      void ShowSettings(QWidget *parent);
-     void connect();
      void disconnect();
      void ShowJoinChan(QWidget *parent);
      void leaveChan(QWidget *parent);

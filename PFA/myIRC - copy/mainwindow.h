@@ -6,12 +6,14 @@
 #include <QLineEdit>
 #include <QDebug>
 #include <QTextEdit>
-class MainWindowController;
-#include "mainwindowcontroller.h"
 
 namespace Ui {
 class MainWindow;
 }
+
+class MainWindowController;
+#include "mainwindowcontroller.h"
+
 
 class MainWindow : public QMainWindow
 {
@@ -34,6 +36,7 @@ public :
     void setUserInput(QLineEdit * userinput){this->userInput = userinput;}
     QLineEdit * getUserInput(){return this->userInput;}
 
+    Ui::MainWindow* getUi() {return this->ui;}
 };
 
 #endif // MAINWINDOW_H

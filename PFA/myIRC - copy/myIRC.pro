@@ -26,19 +26,15 @@ HEADERS  += mainwindow.h \
     channel.h
 
 FORMS    += mainwindow.ui
-win32:CONFIG(release, debug|release): LIBS += -LC:\Users\matthieu\Desktop\Work\communi\lib  -lCommunid
-else:win32:CONFIG(debug, debug|release): LIBS += -LC:\Users\matthieu\Desktop\Work\communi\lib -lCommunid
+
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../communi/lib/ -lCommuni
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../communi/lib/ -lCommunid
 else:symbian: LIBS += -lCommuni
-else:unix: LIBS += -LC:\Users\matthieu\Desktop\Work\communi\include -lCommuni
+else:unix: LIBS += -L$$PWD/../communi/lib/ -lCommuni
 
 INCLUDEPATH += $$PWD/../communi/include
 DEPENDPATH += $$PWD/../communi/include
-
 DEFINES += COMMUNI_SHARED
-
-
-
-
 
 
 

@@ -11,5 +11,4 @@ INPUT(
 ./release\moc_userInputHandler.o
 ./release\moc_mainwindowcontroller.o
 ./release\moc_myirc.o
-./release\moc_channel.o
 );

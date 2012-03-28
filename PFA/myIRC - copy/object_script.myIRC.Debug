@@ -11,5 +11,4 @@ INPUT(
 ./debug\moc_userInputHandler.o
 ./debug\moc_mainwindowcontroller.o
 ./debug\moc_myirc.o
-./debug\moc_channel.o
 );

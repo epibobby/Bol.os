@@ -10,18 +10,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     //stylesheet pour coloration
     this->setStyleSheet("QLineEdit { background-color: yellow } QTextEdit { background-color: grey } QToolBar {background-color: red}");
-
-    navTab = myIrc->getController()->getNavTab();
-
-
-    QAction *actConnect = new QAction("connect", myIrc->getController()->getOutPutwin());
-    connect(actConnect, SIGNAL(triggered()), myIrc, SLOT(connectToServer()));
-    this->ui->mainToolBar->addAction(actConnect);
-
-    QAction *actDisConnect = new QAction("Disconnect", myIrc->getController()->getOutPutwin());
-    connect(actDisConnect, SIGNAL(triggered()), myIrc, SLOT(disconnectFromServer()));
-    this->ui->mainToolBar->addAction(actDisConnect);
-
 }
 
 MainWindow::~MainWindow()

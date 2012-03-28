@@ -6,7 +6,14 @@ MyIRC::MyIRC(QObject *mainWindow)
     this->session = new MySession(this);
     this->controller = new MainWindowController(this);
 
-//    model = new ModelIRC();
+
+    QAction *actConnect = new QAction("connect", controller->getOutPutwin());
+    connect(actConnect, SIGNAL(triggered()), this, SLOT(connectToServer()));
+    this->mainWindow->getUi()->mainToolBar->addAction(actConnect);
+
+    QAction *actDisConnect = new QAction("Disconnect", controller->getOutPutwin());
+    connect(actDisConnect, SIGNAL(triggered()), this, SLOT(disconnectFromServer()));
+    this->mainWindow->getUi()->mainToolBar->addAction(actDisConnect);
 }
 
 void MyIRC::connectToServer()
