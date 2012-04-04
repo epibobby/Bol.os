@@ -13,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     _LMC = new LMC(this);
     _api = new ApiMovie();
     _SWMN = new StackedWidgetMovieNews(this);
-    _searchWidget = new SearchWidget();
+    _searchWidget = new SearchWidget(_api);
     _SWMN->move(30, 360);
     QRect resolution = QApplication::desktop()->screenGeometry();
     move((resolution.width()*15)/100, (resolution.height()*3)/100);

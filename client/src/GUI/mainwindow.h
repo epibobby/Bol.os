@@ -3,7 +3,6 @@
 
 #include <QMainWindow>
 
-#include "../API/apimovie.h"
 #include "lmc.h"
 #include "clientconnection.h"
 #include "mediaplayer.h"

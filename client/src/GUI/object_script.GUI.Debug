@@ -16,6 +16,7 @@ INPUT(
 ./debug/apimovie.o
 ./debug/jsonparser.o
 ./debug/searchwidget.o
+./debug/listmovies.o
 ./debug/moc_logonwindow.o
 ./debug/moc_connectionsettings.o
 ./debug/moc_createcount.o
@@ -30,5 +31,6 @@ INPUT(
 ./debug/moc_jsonparser.o
 ./debug/moc_apimovie.o
 ./debug/moc_searchwidget.o
+./debug/moc_listmovies.o
 ./debug/qrc_mediaplayer.o
 );

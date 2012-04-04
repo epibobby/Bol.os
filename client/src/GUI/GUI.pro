@@ -37,7 +37,8 @@ SOURCES += main.cpp\
     stackedwidgetmovienews.cpp \
     ../API/apimovie.cpp \
     ../API/jsonparser.cpp \
-    searchwidget.cpp
+    searchwidget.cpp \
+    listmovies.cpp
 
 HEADERS  += logonwindow.h \
     connectionsettings.h \
@@ -55,7 +56,8 @@ HEADERS  += logonwindow.h \
     mainwindow.h \
     ../API/jsonparser.h \
     ../API/apimovie.h \
-    searchwidget.h
+    searchwidget.h \
+    listmovies.h
 
 FORMS    += logonwindow.ui \
     connectionsettings.ui \
@@ -65,7 +67,8 @@ FORMS    += logonwindow.ui \
     settings.ui \
     autoshutdown.ui \
     stackedwidgetmovienews.ui \
-    searchwidget.ui
+    searchwidget.ui \
+    listmovies.ui
 
  wince*{
  DEPLOYMENT_PLUGIN += phonon_ds9 phonon_waveout
@@ -100,6 +103,9 @@ DEPENDPATH += $$PWD/../../../../Work/utils/include
 
 win32: PRE_TARGETDEPS += $$PWD/../../../../Work/utils/lib/qjson0.lib
 else:unix:!macx:!symbian: PRE_TARGETDEPS += $$PWD/../../../../Work/utils/lib/libqjson0.a
+
+
+
 
 
 
