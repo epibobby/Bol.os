@@ -4,27 +4,46 @@ JsonParser::JsonParser()
 {
 }
 
+//QList<QMap<QString, QString> >    JsonParser::parseSheet(QByteArray result)
+//{
+//    qDebug() << "parseShortSheet";
+//    bool ok = false;
+//    QVariantMap res = parse.parse(result, &ok).toMap();
+//    QList<QMap<QString, QString> > objRet;
+
+//    if (!ok)
+//        qDebug() << "error of parsing";
+//    else
+//    {
+//        foreach()
+//    }
+
+//}
+
 QList<QMap<QString, QString> >    JsonParser::parseSheet(QByteArray result)
 {
     qDebug() << "parseShortSheet";
     bool ok = false;
     QVariant res = parse.parse(result, &ok);
     QList<QMap<QString, QString> > objRet;
-    qDebug() << "reponse valide " << QString(result);
     if (!ok)
         qDebug() << "error of parsing";
     else
     {
+
         QVariantList elem = res.toList();
         foreach(QVariant obj, elem)
         {
+//            foreach (QVariant plugin, obj["keywords"].toList()) {
+//            qDebug() << "\t-" << plugin.toString();
+//           }
             QVariantMap map = obj.toMap();
             QMap<QString, QString> movie;
-            qDebug() << obj.toString();
             if (obj.toString() != "Nothing found.")
             {
                 foreach(QString key, map.keys())
                 {
+
                     movie.insert(key, map[key].toString());
                 }
             }
@@ -33,15 +52,6 @@ QList<QMap<QString, QString> >    JsonParser::parseSheet(QByteArray result)
     }
     return objRet;
 }
-
-//QList<QMap<QString, QString> >    JsonParser::parseSheetPeople(QByteArray result)
-//{
-//    qDebug() << "parseShortSheet";
-//    bool ok = false;
-//    QVariant res = parse.parse(result, &ok);
-//    QList<QMap<QString, QString> > objRet;
-
-//}
 
 void JsonParser::dumpSheet(QList<QMap<QString, QString> > objRet)
 {

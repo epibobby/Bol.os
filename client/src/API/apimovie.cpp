@@ -15,7 +15,7 @@ ApiMovie::ApiMovie()
     }
 }
 
-void ApiMovie::requestASheet(QString search, bool person)
+QList<QMap<QString, QString> > ApiMovie::requestASheet(QString search, bool person)
 {
     qDebug() << "requestASheet";
     QByteArray sheet;
@@ -24,7 +24,9 @@ void ApiMovie::requestASheet(QString search, bool person)
         remoteSearch(search, person);
 //    else
 //        JsonSheetToObject(sheet);
+        return this->listMovies;
 }
+
 
 QByteArray ApiMovie::localSearch(QString search)
 {
@@ -72,10 +74,7 @@ void ApiMovie::remoteSearch(QString search, bool person)
     else
         function = "http://api.themoviedb.org/2.1/Movie.search/en/json/" + (*authKey) + "/" + search;
 
-    qDebug() << function;
     net->get(QNetworkRequest(QUrl(function )));
-
-    //net->get(QNetworkRequest(QUrl(function)));
 }
 
 void ApiMovie::remoteAnswer(QNetworkReply *reply)
@@ -96,7 +95,6 @@ void ApiMovie::JsonSheetToObject(QByteArray sheet)
     {
         QString name = obj.first().value("name").toLower();
         name = name.replace(QRegExp("[\\W]+"), "_");
-        qDebug() << name << QDir::currentPath();
         QFile newSheet(name);
         if (!newSheet.exists())
         {
@@ -107,12 +105,12 @@ void ApiMovie::JsonSheetToObject(QByteArray sheet)
     qDebug() << "a tout fini";
     this->jsonparse->dumpSheet(obj);
     emit found(obj);
+    this->listMovies = obj;
 }
 
 
 QStringList ApiMovie::loadLibrary(QString path)
 {
-//    QFileInfo libDir("./index");
     QDir lib;
     QStringList filters;
     QStringList listMovies;
@@ -124,13 +122,9 @@ QStringList ApiMovie::loadLibrary(QString path)
     listMovies = lib.entryList(filters);
     if (index.open(QFile::WriteOnly | QFile::Text))
     {
-        // check if the lib is up to date
-//        if (!isUpToDate)
-//        {
             QTextStream str(&index);
             foreach (QString movie, listMovies)
                 str << movie << "\n";
-//        }
         index.close();
     }
     return listMovies;

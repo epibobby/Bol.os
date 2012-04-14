@@ -20,9 +20,10 @@ class ApiMovie : public QObject
     QString *token;
     QNetworkAccessManager *net;
     JsonParser *jsonparse;
+    QList<QMap<QString, QString> > listMovies;
 public:
     ApiMovie();
-    void requestASheet(QString search, bool person = false);
+    QList<QMap<QString, QString> > requestASheet(QString search, bool person = false);
     QStringList loadLibrary(QString path);
 private:
     QByteArray localSearch(QString search);
