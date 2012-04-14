@@ -12,7 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     _LMC = new LMC(this);
     _api = new ApiMovie();
-    _SWMN = new StackedWidgetMovieNews(this);
+    _SWMN = new StackedWidgetMovieNews(_api, this);
     _searchWidget = new SearchWidget(_api);
     _SWMN->move(30, 360);
     QRect resolution = QApplication::desktop()->screenGeometry();
@@ -91,12 +91,12 @@ void MainWindow::_slotLMC(int id)
 
 void MainWindow::on_ChangeComLeft_clicked()
 {
-    //ui->stackedWidget->setCurrentIndex(1);
+    ui->stackedWidget2->setCurrentIndex(1);
 }
 
 void MainWindow::on_ChangeComRight_clicked()
 {
-    //ui->stackedWidget->setCurrentIndex(0);
+    ui->stackedWidget2->setCurrentIndex(0);
 }
 
 void MainWindow::on_actionExit_triggered()

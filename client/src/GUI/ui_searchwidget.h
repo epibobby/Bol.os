@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'searchwidget.ui'
 **
-** Created: Wed 4. Apr 16:52:52 2012
+** Created: Thu 12. Apr 09:38:33 2012
 **      by: Qt User Interface Compiler version 4.7.4
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
@@ -46,7 +46,7 @@ public:
     QLabel *Title2;
     QLabel *label;
     QPushButton *pushButton_6;
-    QPushButton *PlayMinuteMovie;
+    QPushButton *PlayTrailer;
     QLabel *RateMinuteMovieLabel_2;
     QLabel *GoodMinuteMovieImg;
     QLabel *label_5;
@@ -73,6 +73,7 @@ public:
     QLabel *SumUpMinuteMovieMovieText_9;
     QLabel *SumUpMinuteMovieMovieText_10;
     QLineEdit *SearchMovie;
+    QLabel *label_2;
 
     void setupUi(QWidget *SearchWidget)
     {
@@ -93,7 +94,7 @@ public:
         SumUpMovieText->setFont(font);
         Title = new QLabel(SearchWidget);
         Title->setObjectName(QString::fromUtf8("Title"));
-        Title->setGeometry(QRect(320, 10, 431, 61));
+        Title->setGeometry(QRect(250, 10, 841, 61));
         QFont font1;
         font1.setFamily(QString::fromUtf8("Europe_Ext"));
         font1.setPointSize(30);
@@ -101,6 +102,8 @@ public:
         font1.setItalic(true);
         font1.setWeight(75);
         Title->setFont(font1);
+        Title->setTextFormat(Qt::AutoText);
+        Title->setAlignment(Qt::AlignCenter);
         listView = new QListView(SearchWidget);
         listView->setObjectName(QString::fromUtf8("listView"));
         listView->setGeometry(QRect(320, 510, 721, 161));
@@ -135,7 +138,7 @@ public:
         label_19->setPixmap(QPixmap(QString::fromUtf8("../../resources/images/Widgetcadre3.png")));
         CreateChannel = new QPushButton(SearchWidget);
         CreateChannel->setObjectName(QString::fromUtf8("CreateChannel"));
-        CreateChannel->setGeometry(QRect(810, 60, 94, 23));
+        CreateChannel->setGeometry(QRect(240, 40, 94, 23));
         CreateChannel->setStyleSheet(QString::fromUtf8("#CreateChannel {\n"
 "color: #333;\n"
 "border: 2px solid #555;\n"
@@ -209,7 +212,7 @@ public:
         GoodMinuteMovie->setIconSize(QSize(48, 48));
         Title2 = new QLabel(SearchWidget);
         Title2->setObjectName(QString::fromUtf8("Title2"));
-        Title2->setGeometry(QRect(400, 70, 241, 61));
+        Title2->setGeometry(QRect(280, 70, 781, 61));
         QFont font5;
         font5.setFamily(QString::fromUtf8("Europe_Ext"));
         font5.setPointSize(16);
@@ -217,6 +220,7 @@ public:
         font5.setItalic(true);
         font5.setWeight(75);
         Title2->setFont(font5);
+        Title2->setAlignment(Qt::AlignCenter);
         label = new QLabel(SearchWidget);
         label->setObjectName(QString::fromUtf8("label"));
         label->setGeometry(QRect(10, -70, 211, 151));
@@ -228,13 +232,13 @@ public:
         icon1.addFile(QString::fromUtf8("../../resources/images/fleche_gauche.png"), QSize(), QIcon::Normal, QIcon::Off);
         pushButton_6->setIcon(icon1);
         pushButton_6->setIconSize(QSize(50, 50));
-        PlayMinuteMovie = new QPushButton(SearchWidget);
-        PlayMinuteMovie->setObjectName(QString::fromUtf8("PlayMinuteMovie"));
-        PlayMinuteMovie->setGeometry(QRect(90, 370, 41, 41));
+        PlayTrailer = new QPushButton(SearchWidget);
+        PlayTrailer->setObjectName(QString::fromUtf8("PlayTrailer"));
+        PlayTrailer->setGeometry(QRect(90, 370, 41, 41));
         QIcon icon2;
         icon2.addFile(QString::fromUtf8("../../resources/images/playon.gif"), QSize(), QIcon::Normal, QIcon::Off);
-        PlayMinuteMovie->setIcon(icon2);
-        PlayMinuteMovie->setIconSize(QSize(35, 35));
+        PlayTrailer->setIcon(icon2);
+        PlayTrailer->setIconSize(QSize(35, 35));
         RateMinuteMovieLabel_2 = new QLabel(SearchWidget);
         RateMinuteMovieLabel_2->setObjectName(QString::fromUtf8("RateMinuteMovieLabel_2"));
         RateMinuteMovieLabel_2->setGeometry(QRect(210, 260, 31, 16));
@@ -252,7 +256,7 @@ public:
         label_5->setPixmap(QPixmap(QString::fromUtf8("../../resources/images/5gR7CiLF6rtfusggiL8yeSm2Lgl.jpg")));
         SumUpMinuteMovieMovieText = new QLabel(SearchWidget);
         SumUpMinuteMovieMovieText->setObjectName(QString::fromUtf8("SumUpMinuteMovieMovieText"));
-        SumUpMinuteMovieMovieText->setGeometry(QRect(640, 140, 91, 20));
+        SumUpMinuteMovieMovieText->setGeometry(QRect(630, 140, 91, 20));
         SumUpMinuteMovieMovieText->setFont(font2);
         SumUpMinuteMovieMovieText_2 = new QLabel(SearchWidget);
         SumUpMinuteMovieMovieText_2->setObjectName(QString::fromUtf8("SumUpMinuteMovieMovieText_2"));
@@ -264,7 +268,7 @@ public:
         label_16->setPixmap(QPixmap(QString::fromUtf8("../../resources/images/etoile.gif")));
         PlayMovie = new QPushButton(SearchWidget);
         PlayMovie->setObjectName(QString::fromUtf8("PlayMovie"));
-        PlayMovie->setGeometry(QRect(810, 90, 94, 23));
+        PlayMovie->setGeometry(QRect(950, 0, 94, 31));
         PlayMovie->setStyleSheet(QString::fromUtf8("#PlayMovie {\n"
 "color: #333;\n"
 "border: 2px solid #555;\n"
@@ -327,7 +331,7 @@ public:
         SumUpMinuteMovieMovieText_3->setFont(font2);
         JoinChannel = new QPushButton(SearchWidget);
         JoinChannel->setObjectName(QString::fromUtf8("JoinChannel"));
-        JoinChannel->setGeometry(QRect(810, 30, 94, 23));
+        JoinChannel->setGeometry(QRect(240, 10, 94, 23));
         JoinChannel->setStyleSheet(QString::fromUtf8("#JoinChannel {\n"
 "color: #333;\n"
 "border: 2px solid #555;\n"
@@ -412,6 +416,9 @@ public:
         SearchMovie = new QLineEdit(SearchWidget);
         SearchMovie->setObjectName(QString::fromUtf8("SearchMovie"));
         SearchMovie->setGeometry(QRect(40, 10, 141, 20));
+        label_2 = new QLabel(SearchWidget);
+        label_2->setObjectName(QString::fromUtf8("label_2"));
+        label_2->setGeometry(QRect(30, 370, 46, 13));
 
         retranslateUi(SearchWidget);
 
@@ -462,7 +469,7 @@ public:
         Title2->setText(QApplication::translate("SearchWidget", "Why So Serious?", 0, QApplication::UnicodeUTF8));
         label->setText(QString());
         pushButton_6->setText(QString());
-        PlayMinuteMovie->setText(QString());
+        PlayTrailer->setText(QString());
         RateMinuteMovieLabel_2->setText(QApplication::translate("SearchWidget", "20", 0, QApplication::UnicodeUTF8));
         GoodMinuteMovieImg->setText(QString());
         label_5->setText(QString());
@@ -519,6 +526,7 @@ public:
 "as Harvey Dent", 0, QApplication::UnicodeUTF8));
         SumUpMinuteMovieMovieText_10->setText(QApplication::translate("SearchWidget", "Maggie Gyllenhaal\n"
 "as Rachel Dawes", 0, QApplication::UnicodeUTF8));
+        label_2->setText(QString());
     } // retranslateUi
 
 };

@@ -31,6 +31,12 @@ void SearchWidget::IncomingSheet(QList<QMap<QString, QString> > list)
                 tmp.id = i.value();
               else if (i.key() == "overview")
                sheet.summary = i.value();
+              else if (i.key() == "trailer") {
+                  this->trailer = i.value();
+              }
+              else if (i.key() == "tagline") {
+                  ui->Title2->setText(i.value());
+              }
              qDebug() << i.key() << ": " << i.value() << endl;
            }
            if (tmp.id != 0)
@@ -62,4 +68,9 @@ SearchWidget::~SearchWidget()
 void SearchWidget::on_Search_clicked()
 {
     _api->requestASheet(ui->SearchMovie->text());
+}
+
+void SearchWidget::on_PlayTrailer_clicked()
+{
+    QDesktopServices::openUrl(QUrl(this->trailer));
 }
