@@ -28,9 +28,10 @@ class MyIRC : public QMainWindow
 public:
     explicit MyIRC(QWidget *mainWindow = 0);
     test *mainWindow;
+     QLineEdit *tmpE;
 private:
     QFrame* popup1; //fentre du nickname
-     QLineEdit *tmpE; //ineEdit du nickname //la vue principale de l'IRC, onglet Community.
+     //ineEdit du nickname //la vue principale de l'IRC, onglet Community.
     WindowController *controller; //le controleur de la vue pour récupérer les infos et les mettre.
     MySession *session; //la session IRC, permet la connection et la déconnection.
 
