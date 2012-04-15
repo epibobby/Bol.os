@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
     _searchWidget = new SearchWidget(_api);
     _SWMN->move(30, 360);
     QRect resolution = QApplication::desktop()->screenGeometry();
-    move((resolution.width()*15)/100, (resolution.height()*3)/100);
+    move(0,0);
     this->setWindowFlags(Qt::FramelessWindowHint);
     initPlayer();
     QSignalMapper *signalMapper = new QSignalMapper();
