@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'stackedwidgetmovienews.ui'
 **
-** Created: Sun 15. Apr 23:00:25 2012
+** Created: Mon 16. Apr 01:18:35 2012
 **      by: Qt User Interface Compiler version 4.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
