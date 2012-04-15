@@ -34,6 +34,13 @@ void UserInputHandler::parseInput()
         parseInput(myController->getActiveChan()->getName());
     else
         parseInput(tr(""));
+
+
+
+   QTabWidget *navTab = myController->getNavTab();
+   ((QTextEdit*)(navTab->currentWidget()))->append(this->myController->getUserInputEditor()->text());
+
+
     this->myController->getUserInputEditor()->clear();
 }
 

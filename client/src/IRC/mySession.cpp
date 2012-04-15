@@ -50,23 +50,18 @@ void MySession::onMessageReceived(IrcMessage*toto)
         t->append(toto->toString());
         break;
     }
-
 }
 
 void MySession::handlePrivateMessage(IrcPrivateMessage *msg)
 {
-    // QTabWidget *navTab = this->mainWindow->getController()->getNavTab();
-    qDebug() << tr("HAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA") + this->mainWindow->getController()->getNavTab()->count() + tr("HOOOOOOOOOO") ;
-    ((QTextEdit *)this->mainWindow->getController()->getNavTab()->widget(1))->append(msg->message());
-    /*for (int i = 1; i < navTab->count(); ++i)
+     QTabWidget *navTab = this->mainWindow->getController()->getNavTab();
+
+    for (int i = 1; i < navTab->count(); ++i)
     {
 
         if (!msg->target().compare(navTab->tabText(i)))
-            this->mainWindow->getController()->getTabAt(i)->append(msg->message());
+            this->mainWindow->getController()->getTabAt(i)->append(msg->sender().name()+ "    >" + msg->message());
     }
-
-    msg->target();*/
-
 }
 
 void MySession::disConnectFromServer()
