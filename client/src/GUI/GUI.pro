@@ -112,16 +112,16 @@ OTHER_FILES += \
     ../API/ApiMovie.pro.user
 
 
-INCLUDEPATH += $$PWD/../../../../Work/utils/src
-DEPENDPATH += $$PWD/../../../../Work/utils/src
+INCLUDEPATH += $$PWD/../utils/src
+DEPENDPATH += $$PWD/../utils/src
 
-unix:!macx:!symbian|win32: LIBS += -L$$PWD/../../../../Work/utils/lib/ -lqjson0
+unix:!macx:!symbian|win32: LIBS += -L$$PWD/../utils/lib/ -lqjson0
 
-INCLUDEPATH += $$PWD/../../../../Work/utils/include
-DEPENDPATH += $$PWD/../../../../Work/utils/include
+INCLUDEPATH += $$PWD/../utils/include
+DEPENDPATH += $$PWD/../utils/include
 
-win32: PRE_TARGETDEPS += $$PWD/../../../../Work/utils/lib/qjson0.lib
-else:unix:!macx:!symbian: PRE_TARGETDEPS += $$PWD/../../../../Work/utils/lib/libqjson0.a
+win32: PRE_TARGETDEPS += $$PWD/../utils/lib/qjson0.lib
+else:unix:!macx:!symbian: PRE_TARGETDEPS += $$PWD/../utils/lib/libqjson0.a
 
 
 win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../communi/lib/ -lCommuni
