@@ -30,7 +30,7 @@ void MyIRC::setNickname()
        popup1 = new QFrame(this, Qt::Tool | Qt::Window | Qt::FramelessWindowHint);
        popup1->setFrameStyle(QFrame::Box);
        popup1->resize(150,60);
-       popup1->move(1577, 118);
+       popup1->move(1288, 80);
        tmpE = new QLineEdit( popup1 );
   // connect( tmpE, SIGNAL( textChanged(const QString&)), this, SLOT( setActive() ) );
        tmpE->setGeometry(10,15, 130, 30);
