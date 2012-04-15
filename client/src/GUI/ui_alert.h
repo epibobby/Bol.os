@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'alert.ui'
 **
-** Created: Wed 4. Apr 15:11:18 2012
-**      by: Qt User Interface Compiler version 4.7.4
+** Created: Sun 15. Apr 23:00:25 2012
+**      by: Qt User Interface Compiler version 4.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -34,7 +34,8 @@ public:
         Alert->resize(225, 79);
         Text = new QLabel(Alert);
         Text->setObjectName(QString::fromUtf8("Text"));
-        Text->setGeometry(QRect(50, 20, 111, 16));
+        Text->setGeometry(QRect(0, 20, 231, 20));
+        Text->setAlignment(Qt::AlignCenter);
         pushButton = new QPushButton(Alert);
         pushButton->setObjectName(QString::fromUtf8("pushButton"));
         pushButton->setGeometry(QRect(74, 50, 81, 23));

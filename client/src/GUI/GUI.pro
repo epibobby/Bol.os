@@ -9,6 +9,7 @@ QT       += network
 QT       += opengl
 QT       += phonon
 QT       += xml
+QT       += script
 
 CONFIG   += console
 CONFIG   -= app_bundle
@@ -38,7 +39,15 @@ SOURCES += main.cpp\
     ../API/apimovie.cpp \
     ../API/jsonparser.cpp \
     searchwidget.cpp \
-    listmovies.cpp
+    listmovies.cpp \
+    library.cpp \
+    createlibrary.cpp \
+    ../IRC/userInputHandler.cpp \
+    ../IRC/sessionWrapper.cpp \
+    ../IRC/mySession.cpp \
+    ../IRC/myirc.cpp \
+    ../IRC/mainwindowcontroller.cpp \
+    ../IRC/channel.cpp
 
 HEADERS  += logonwindow.h \
     connectionsettings.h \
@@ -57,7 +66,15 @@ HEADERS  += logonwindow.h \
     ../API/jsonparser.h \
     ../API/apimovie.h \
     searchwidget.h \
-    listmovies.h
+    listmovies.h \
+    library.h \
+    createlibrary.h \
+    ../IRC/userInputHandler.h \
+    ../IRC/sessionWrapper.h \
+    ../IRC/mySession.h \
+    ../IRC/myirc.h \
+    ../IRC/mainwindowcontroller.h \
+    ../IRC/channel.h
 
 FORMS    += logonwindow.ui \
     connectionsettings.ui \
@@ -68,7 +85,9 @@ FORMS    += logonwindow.ui \
     autoshutdown.ui \
     stackedwidgetmovienews.ui \
     searchwidget.ui \
-    listmovies.ui
+    listmovies.ui \
+    library.ui \
+    createlibrary.ui
 
  wince*{
  DEPLOYMENT_PLUGIN += phonon_ds9 phonon_waveout
@@ -105,7 +124,14 @@ win32: PRE_TARGETDEPS += $$PWD/../../../../Work/utils/lib/qjson0.lib
 else:unix:!macx:!symbian: PRE_TARGETDEPS += $$PWD/../../../../Work/utils/lib/libqjson0.a
 
 
+win32:CONFIG(release, debug|release): LIBS += -L$$PWD/../communi/lib/ -lCommuni
+else:win32:CONFIG(debug, debug|release): LIBS += -L$$PWD/../communi/lib/ -lCommunid
+else:symbian: LIBS += -lCommuni
+else:unix: LIBS += -L$$PWD/../communi/lib/ -lCommuni
 
+INCLUDEPATH += $$PWD/../communi/include
+DEPENDPATH += $$PWD/../communi/include
+DEFINES += COMMUNI_SHARED
 
 
 

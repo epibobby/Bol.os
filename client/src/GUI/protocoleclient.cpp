@@ -43,7 +43,7 @@ bool ProtocoleClient::callMethod(RequestType request, UserInfo info)
 
 bool ProtocoleClient::SETTOKEN(UserInfo info)
 {
-    std::cout << "Set Token = " << info.token << std::endl;
+    //std::cout << "Set Token = " << info.token << std::endl;
     if (info.token != 0)
         return true;
     std::cerr << "Error Protocole : SETTOKEN" << std::endl;

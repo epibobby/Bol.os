@@ -1,8 +1,8 @@
 /********************************************************************************
 ** Form generated from reading UI file 'searchwidget.ui'
 **
-** Created: Thu 12. Apr 09:38:33 2012
-**      by: Qt User Interface Compiler version 4.7.4
+** Created: Sun 15. Apr 23:00:25 2012
+**      by: Qt User Interface Compiler version 4.8.0
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/

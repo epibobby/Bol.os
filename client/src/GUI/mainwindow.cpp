@@ -28,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent) :
    // signalMapper2->setMapping(ui->PlayDayMovie, 2);
    // connect(signalMapper2, SIGNAL(mapped(int)), this, SLOT(_slotLMC(int)));
     connect(_api, SIGNAL(found(QList<QMap<QString, QString> >)), this, SLOT(IncomingSheet(QList<QMap<QString, QString> >)));
+     MyIRC *myIrc = new MyIRC(ui->IRC);
 }
 
 MainWindow::~MainWindow()
@@ -59,8 +60,11 @@ void MainWindow::initPlayer()
     _player = new MediaPlayer();
     _player->move(0,0);
     _player->setMinimumSize(100, 300);
+    _library = new Library(_player);
+    ui->tabWidget->insertTab(1, _library, "Library");
     ui->tabWidget->insertTab(2, _player, "Media Player");
     ui->tabWidget->insertTab(3, _searchWidget, "Search");
+   // ui->tabWidget->
     _player->setSmallScreen(smallScreen);
     if (smallScreen)
        _player->showMaximized();
@@ -87,16 +91,6 @@ void MainWindow::_slotLMC(int id)
         case 1 : _LMC->on_AddYourLibrary_clicked(); break;
         case 2 : _LMC->on_PlayDayMovie_clicked(); break;
     }
-}
-
-void MainWindow::on_ChangeComLeft_clicked()
-{
-    ui->stackedWidget2->setCurrentIndex(1);
-}
-
-void MainWindow::on_ChangeComRight_clicked()
-{
-    ui->stackedWidget2->setCurrentIndex(0);
 }
 
 void MainWindow::on_actionExit_triggered()

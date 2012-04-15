@@ -17,6 +17,14 @@ INPUT(
 ./debug/jsonparser.o
 ./debug/searchwidget.o
 ./debug/listmovies.o
+./debug/library.o
+./debug/createlibrary.o
+./debug/userInputHandler.o
+./debug/sessionWrapper.o
+./debug/mySession.o
+./debug/myirc.o
+./debug/mainwindowcontroller.o
+./debug/channel.o
 ./debug/moc_logonwindow.o
 ./debug/moc_connectionsettings.o
 ./debug/moc_createcount.o
@@ -32,5 +40,12 @@ INPUT(
 ./debug/moc_apimovie.o
 ./debug/moc_searchwidget.o
 ./debug/moc_listmovies.o
+./debug/moc_library.o
+./debug/moc_createlibrary.o
+./debug/moc_userInputHandler.o
+./debug/moc_sessionWrapper.o
+./debug/moc_mySession.o
+./debug/moc_myirc.o
+./debug/moc_mainwindowcontroller.o
 ./debug/qrc_mediaplayer.o
 );

@@ -2,7 +2,7 @@
 #define JSONPARSER_H
 
 #include <QByteArray>
-#include <QtScript/QScriptEngine>
+#include <QtScript>
 #include <QString>
 #include <QStringList>
 #include <QDebug>

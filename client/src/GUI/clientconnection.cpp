@@ -63,7 +63,7 @@ void ClientConnection::readOnServer()
     header = (RequestType)_currentFortune.toStdString().c_str()[0];
     if (_currentFortune.size() > sizeof(RequestType)) {
           memcpy(userInfo, _currentFortune.data()+sizeof(RequestType), sizeof(UserInfo));
-          std::cout << "Token=" << userInfo->token << std::endl;
+          //std::cout << "Token=" << userInfo->token << std::endl;
     }
 
     std::cout << "Header=" << header << std::endl;

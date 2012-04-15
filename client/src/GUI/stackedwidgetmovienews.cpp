@@ -14,7 +14,7 @@ StackedWidgetMovieNews::StackedWidgetMovieNews(ApiMovie *api, QWidget *parent) :
     _randomMovies->append("spider-man 2");
     _randomMovies->append("spider-man 3");
     _movieTimer = new QTimer();
-    _movieTimer->start(5000);
+    //_movieTimer->start(5000);
     _movieTimer->connect(_movieTimer, SIGNAL(timeout()),this, SLOT(ChangeMovie()));
     //connect(_api, SIGNAL(found(QList<QMap<QString, QString> >)), this, SLOT(IncomingSheet(QList<QMap<QString, QString> >)));
     _movieTimer->setSingleShot(true);

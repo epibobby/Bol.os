@@ -4,6 +4,7 @@
 
  #pragma once
 
+ #include <GL/GLU.h>
  #include <QtGui/QWidget>
  #include <QtGui/QApplication>
  #include <QtCore/QTimerEvent>

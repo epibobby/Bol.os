@@ -1,0 +1,48 @@
+﻿Build started 27/03/2012 00:51:04.
+     1>Project "C:\Users\Samie\Desktop\Dropbox\PFA\myIRC\myIRC.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Creating "debug\myIRC.unsuccessfulbuild" because "AlwaysCreate" was specified.
+       CustomBuild:
+         Moc'ing mainwindow.h...
+         Moc'ing mainwindowcontroller.h...
+         Moc'ing mySession.h...
+         Moc'ing myirc.h...
+         Moc'ing userInputHandler.h...
+         UIC mainwindow.ui
+       ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\CL.exe /c /IC:\Qt\4.7.3\include\QtCore /IC:\Qt\4.7.3\include\QtGui /IC:\Qt\4.7.3\include /I..\communi\include /IC:\Qt\4.7.3\include\ActiveQt /Idebug /I. /Ic:\Qt\4.7.3\mkspecs\default /Zi /nologo /W3 /WX- /Od /D _WINDOWS /D COMMUNI_SHARED /D QT_CORE_LIB /D QT_DLL /D QT_GUI_LIB /D QT_HAVE_3DNOW /D QT_HAVE_MMX /D QT_HAVE_MMXEXT /D QT_HAVE_SSE /D QT_HAVE_SSE2 /D QT_LARGEFILE_SUPPORT /D QT_LARGEFILE_SUPPORT /D QT_THREAD_SUPPORT /D UNICODE /D UNICODE /D WIN32 /D WIN32 /Gm- /EHsc /MDd /GS- /fp:precise /Zc:wchar_t- /Zc:forScope /GR /Fo"debug\\" /Fd".\vc100.pdb" /Gd /TP /errorReport:prompt channel.cpp Debug\moc_mainwindow.cpp Debug\moc_mainwindowcontroller.cpp Debug\moc_myirc.cpp Debug\moc_mySession.cpp Debug\moc_userInputHandler.cpp main.cpp mainwindow.cpp mainwindowcontroller.cpp mySession.cpp myirc.cpp userInputHandler.cpp -Zm200 -w34100 -w34189 
+         channel.cpp
+         moc_mainwindow.cpp
+         moc_mainwindowcontroller.cpp
+         moc_myirc.cpp
+         moc_mySession.cpp
+         moc_userInputHandler.cpp
+         main.cpp
+         mainwindow.cpp
+         mainwindowcontroller.cpp
+         mySession.cpp
+         myirc.cpp
+     1>myirc.cpp(23): warning C4100: 'chan' : unreferenced formal parameter
+     1>myirc.cpp(28): warning C4100: 'chan' : unreferenced formal parameter
+         userInputHandler.cpp
+     1>userInputHandler.cpp(96): warning C4100: 'channel' : unreferenced formal parameter
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"debug\myIRC.exe" /NOLOGO /LIBPATH:C:\Qt\4.7.3\lib /LIBPATH:C:/Users/Samie/Desktop/Dropbox/PFA/myIRC/../communi/lib/ qtmaind.lib Communid.lib QtGuid4.lib QtCored4.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"debug\myIRC.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Samie\Desktop\Dropbox\PFA\myIRC\debug\myIRC.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /MACHINE:X64 debug\channel.obj
+         debug\moc_mainwindow.obj
+         debug\moc_mainwindowcontroller.obj
+         debug\moc_myirc.obj
+         debug\moc_mySession.obj
+         debug\moc_userInputHandler.obj
+         debug\main.obj
+         debug\mainwindow.obj
+         debug\mainwindowcontroller.obj
+         debug\mySession.obj
+         debug\myirc.obj
+         debug\userInputHandler.obj "/MANIFESTDEPENDENCY:type='win32' name='Microsoft.Windows.Common-Controls' version='6.0.0.0' publicKeyToken='6595b64144ccf1df' language='*' processorArchitecture='*'"  /SUBSYSTEM:WINDOWS 
+     1>LINK : fatal error LNK1104: cannot open file 'Communid.lib'
+     1>Done Building Project "C:\Users\Samie\Desktop\Dropbox\PFA\myIRC\myIRC.vcxproj" (build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:30.40
