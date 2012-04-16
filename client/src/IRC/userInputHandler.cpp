@@ -30,15 +30,21 @@ UserInputHandler::UserInputHandler(WindowController *parent =0)
 
 void UserInputHandler::parseInput()
 {
+    QTabWidget *navTab = myController->getNavTab();
+
+    myController->setActiveChan(navTab->tabText(navTab->currentIndex()) );
     if (myController->getActiveChan() != NULL)
         parseInput(myController->getActiveChan()->getName());
     else
         parseInput(tr(""));
 
+    qDebug() << myController->getActiveChan()->getName();
 
 
-   QTabWidget *navTab = myController->getNavTab();
-   ((QTextEdit*)(navTab->currentWidget()))->append(myController->getMyIrc()->tmpE->text() + "> " + this->myController->getUserInputEditor()->text());
+
+   ((QTextEdit*)(navTab->currentWidget()))->append(myController->getMyIrc()->tmpE->text() + ">  " + this->myController->getUserInputEditor()->text());
+
+
 
 
     this->myController->getUserInputEditor()->clear();
@@ -102,19 +108,23 @@ IrcCommand* UserInputHandler::parseJoin(const QString& channel, const QStringLis
 {
     if (params.count() == 1 || params.count() == 2)
     {
-        //creation du channel
-        QList<QString>* users = new QList<QString>;
-        QString * theTopic = new QString("the topic.");
-        QString * toto = new QString(params.at(0));
-        myController->getMyChannels()->append(Channel(*toto, *theTopic, *users));
-       //creation d'une tab "channel"  pui sajout dans navTab
-       QTextEdit *theChanTab = new QTextEdit(myController->getNavTab());
-       myController->setActiveChan(params.at(0));
-       myController->addTabToNavTab(theChanTab,params.at(0));
-       myController->getNavTab()->setCurrentWidget(theChanTab);
-       return IrcCommand::createJoin(params.at(0));
+        return this->createChan(params.at(0));
     }
         return 0;
+}
+
+IrcCommand * UserInputHandler::createChan(QString t)
+{
+    QList<QString>* users = new QList<QString>;
+    QString * theTopic = new QString("the topic.");
+    QString * toto = new QString(t);
+    myController->getMyChannels()->append(Channel(*toto, *theTopic, *users));
+   //creation d'une tab "channel"  pui sajout dans navTab
+   QTextEdit *theChanTab = new QTextEdit(myController->getNavTab());
+   myController->setActiveChan(t);
+   myController->addTabToNavTab(theChanTab,t);
+   myController->getNavTab()->setCurrentWidget(theChanTab);
+   return IrcCommand::createJoin(t);
 }
 
 IrcCommand* UserInputHandler::parseKick(const QString& channel, const QStringList& params)

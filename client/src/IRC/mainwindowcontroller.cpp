@@ -68,12 +68,11 @@ void WindowController::onSelectedTab(int t)
         setActiveTab(getTabAt(t));
 
     }
-
+    qDebug() << this->activeChan->getName();
 }
 
 QTextEdit * WindowController::getTabAt(int ind)
 {
-    qDebug() << navTab->count();
 
         return ((QTextEdit *)(navTab->widget(ind)));
 }

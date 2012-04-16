@@ -60,7 +60,7 @@ void MySession::handlePrivateMessage(IrcPrivateMessage *msg)
     {
 
         if (!msg->target().compare(navTab->tabText(i)))
-            this->mainWindow->getController()->getTabAt(i)->append(msg->sender().name()+ "    >" + msg->message());
+            this->mainWindow->getController()->getTabAt(i)->append(msg->sender().name()+ ">  " + msg->message());
     }
 }
 

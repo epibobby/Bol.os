@@ -41,6 +41,7 @@ private :
       IrcCommand* parseVersion(const QString& channel, const QStringList& params);
       IrcCommand* parseWhois(const QString& channel, const QStringList& params);
       IrcCommand* parseWhowas(const QString& channel, const QStringList& params);
+      IrcCommand* createChan(QString);
 
 
 public slots :
