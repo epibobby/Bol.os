@@ -23,7 +23,7 @@ class Library : public QWidget
     Q_OBJECT
 
 public:
-    explicit Library(MediaPlayer *player, QWidget *parent = 0);
+    explicit Library(QTabWidget *tab, MediaPlayer *player, QWidget *parent = 0);
     void changeDirectory();
     void fillList();
     ~Library();
@@ -40,6 +40,7 @@ private slots:
     void on_Delete_clicked();
 
 private:
+    QTabWidget *_tab;
     MediaPlayer *_player;
     Ui::Library *ui;
     QList<lib> *_fileList;

@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent) :
     _api = new ApiMovie();
     _SWMN = new StackedWidgetMovieNews(_api, this);
     MyIRC *myIrc = new MyIRC(ui->IRC);
-    _searchWidget = new SearchWidget(myIrc, _api);
+    _searchWidget = new SearchWidget(ui->tabWidget, myIrc, _api);
     _SWMN->move(30, 360);
     QRect resolution = QApplication::desktop()->screenGeometry();
     move(0,0);
@@ -22,9 +22,9 @@ MainWindow::MainWindow(QWidget *parent) :
     initPlayer();
     QSignalMapper *signalMapper = new QSignalMapper();
     //QSignalMapper *signalMapper2 = new QSignalMapper();
-    connect(ui->AddYourLibrary, SIGNAL(clicked()), signalMapper, SLOT(map()));
-    signalMapper->setMapping(ui->AddYourLibrary, 1);
-    connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(_slotLMC(int)));
+    //connect(ui->AddYourLibrary, SIGNAL(clicked()), signalMapper, SLOT(map()));
+    //signalMapper->setMapping(ui->AddYourLibrary, 1);
+    //connect(signalMapper, SIGNAL(mapped(int)), this, SLOT(_slotLMC(int)));
    // connect(ui->PlayDayMovie, SIGNAL(clicked()), signalMapper2, SLOT(map()));
    // signalMapper2->setMapping(ui->PlayDayMovie, 2);
    // connect(signalMapper2, SIGNAL(mapped(int)), this, SLOT(_slotLMC(int)));
@@ -48,6 +48,7 @@ void MainWindow::IncomingSheet(QList<QMap<QString, QString> > list)
                qDebug() << i.key() << ": " << i.value() << endl;
            }
        }
+     ui->tabWidget->setCurrentIndex(3);
 }
 
 void MainWindow::initPlayer()
@@ -60,7 +61,7 @@ void MainWindow::initPlayer()
     _player = new MediaPlayer();
     _player->move(0,0);
     _player->setMinimumSize(100, 300);
-    _library = new Library(_player);
+    _library = new Library(ui->tabWidget, _player);
     ui->tabWidget->insertTab(1, _library, "Library");
     ui->tabWidget->insertTab(2, _player, "Media Player");
     ui->tabWidget->insertTab(3, _searchWidget, "Search");
@@ -96,4 +97,9 @@ void MainWindow::_slotLMC(int id)
 void MainWindow::on_actionExit_triggered()
 {
     this->hide();
+}
+
+void MainWindow::on_AddYourLibrary_clicked()
+{
+    _api->requestASheet(ui->SearchMovie->text());
 }

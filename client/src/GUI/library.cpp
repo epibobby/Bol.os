@@ -8,7 +8,7 @@
 #include <QTreeView>
 #include <iostream>
 
-Library::Library(MediaPlayer *player, QWidget *parent) : _player(player),
+Library::Library(QTabWidget *tab, MediaPlayer *player, QWidget *parent) : _tab(tab), _player(player),
     QWidget(parent),
     ui(new Ui::Library)
 {
@@ -98,6 +98,7 @@ void Library::on_treeView_doubleClicked(const QModelIndex &index)
      std::cout << "Index : " << path.toStdString() << std::endl;
       //       QString ipnum = ui->treeView->model()->index(ui->treeView->currentIndex().row(),2).data().toString();
      ui->treeView->setModel(modele);
+     _tab->setCurrentIndex(2);
 }
 
 void Library::on_listWidget_doubleClicked(const QModelIndex &index)

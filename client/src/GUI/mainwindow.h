@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 
+class SearchWidget;
 #include "lmc.h"
 #include "clientconnection.h"
 #include "mediaplayer.h"
@@ -27,6 +28,7 @@ public:
     ~MainWindow();
      void setClient(ClientConnection*);
      void initPlayer();
+     Ui::MainWindow          *ui;
 private slots:
     void _slotLMC(int);
 
@@ -34,8 +36,9 @@ private slots:
 
     void IncomingSheet(QList<QMap<QString, QString> >);
 
+    void on_AddYourLibrary_clicked();
+
 private:
-    Ui::MainWindow          *ui;
     ClientConnection        *_client;
     LMC                     *_LMC;
     MediaPlayer             *_player;

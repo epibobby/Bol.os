@@ -89,7 +89,7 @@
     <property name="geometry">
      <rect>
       <x>40</x>
-      <y>0</y>
+      <y>30</y>
       <width>111</width>
       <height>101</height>
      </rect>
@@ -104,9 +104,9 @@
    <widget class="QComboBox" name="StatusScroll">
     <property name="geometry">
      <rect>
-      <x>280</x>
+      <x>250</x>
       <y>10</y>
-      <width>61</width>
+      <width>71</width>
       <height>22</height>
      </rect>
     </property>
@@ -143,7 +143,7 @@
    <widget class="QLabel" name="StatusText">
     <property name="geometry">
      <rect>
-      <x>150</x>
+      <x>120</x>
       <y>10</y>
       <width>121</width>
       <height>21</height>
@@ -250,10 +250,10 @@
        <widget class="QLabel" name="label_15">
         <property name="geometry">
          <rect>
-          <x>-290</x>
-          <y>0</y>
+          <x>-230</x>
+          <y>-60</y>
           <width>1341</width>
-          <height>801</height>
+          <height>851</height>
          </rect>
         </property>
         <property name="text">
@@ -266,7 +266,7 @@
        <widget class="QLabel" name="WelcomeLabel">
         <property name="geometry">
          <rect>
-          <x>350</x>
+          <x>440</x>
           <y>40</y>
           <width>301</width>
           <height>61</height>
@@ -282,11 +282,11 @@
          <string>Welcome</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="AddYourLibraryLineEdit">
+       <widget class="QLineEdit" name="SearchMovie">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>330</y>
+          <x>60</x>
+          <y>350</y>
           <width>231</width>
           <height>41</height>
          </rect>
@@ -303,8 +303,8 @@
        <widget class="QPushButton" name="AddYourLibrary">
         <property name="geometry">
          <rect>
-          <x>250</x>
-          <y>330</y>
+          <x>290</x>
+          <y>350</y>
           <width>51</width>
           <height>41</height>
          </rect>
@@ -326,8 +326,8 @@
        <widget class="QLabel" name="label_26">
         <property name="geometry">
          <rect>
-          <x>40</x>
-          <y>290</y>
+          <x>100</x>
+          <y>320</y>
           <width>241</width>
           <height>31</height>
          </rect>
@@ -338,57 +338,9 @@
          </font>
         </property>
         <property name="text">
-         <string>Add your library</string>
+         <string>Find a Movie</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_27">
-        <property name="geometry">
-         <rect>
-          <x>830</x>
-          <y>200</y>
-          <width>211</width>
-          <height>31</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <pointsize>18</pointsize>
-         </font>
-        </property>
-        <property name="text">
-         <string>News</string>
-        </property>
-       </widget>
-       <widget class="QScrollArea" name="YourLibrairies">
-        <property name="geometry">
-         <rect>
-          <x>750</x>
-          <y>240</y>
-          <width>251</width>
-          <height>271</height>
-         </rect>
-        </property>
-        <property name="widgetResizable">
-         <bool>true</bool>
-        </property>
-        <widget class="QWidget" name="scrollAreaWidgetContents_3">
-         <property name="geometry">
-          <rect>
-           <x>0</x>
-           <y>0</y>
-           <width>249</width>
-           <height>269</height>
-          </rect>
-         </property>
-        </widget>
-       </widget>
-       <zorder>label_15</zorder>
-       <zorder>WelcomeLabel</zorder>
-       <zorder>AddYourLibraryLineEdit</zorder>
-       <zorder>AddYourLibrary</zorder>
-       <zorder>label_27</zorder>
-       <zorder>label_26</zorder>
-       <zorder>YourLibrairies</zorder>
       </widget>
       <widget class="QWidget" name="page_4">
        <widget class="QScrollArea" name="scrollArea_3">
@@ -562,34 +514,6 @@
       <normaloff>../../resources/images/fleche2.png</normaloff>../../resources/images/fleche2.png</iconset>
     </property>
    </widget>
-   <widget class="QLineEdit" name="lineEdit_2">
-    <property name="geometry">
-     <rect>
-      <x>40</x>
-      <y>120</y>
-      <width>121</width>
-      <height>20</height>
-     </rect>
-    </property>
-   </widget>
-   <widget class="QLabel" name="label_24">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>100</y>
-      <width>81</width>
-      <height>21</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>Europe_Ext</family>
-     </font>
-    </property>
-    <property name="text">
-     <string>Find a Movie</string>
-    </property>
-   </widget>
    <widget class="QLCDNumber" name="lcdNumber_4">
     <property name="geometry">
      <rect>
@@ -630,11 +554,24 @@
    <widget class="QTextEdit" name="TextEdit">
     <property name="geometry">
      <rect>
-      <x>50</x>
-      <y>160</y>
-      <width>281</width>
-      <height>101</height>
+      <x>30</x>
+      <y>170</y>
+      <width>321</width>
+      <height>111</height>
      </rect>
+    </property>
+    <property name="html">
+     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MS Shell Dlg 2'; font-size:8.25pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;10/02/12 --- Derniere mise a jour de l'api.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;08/01/12 --- Mise a jour de l'interface&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;10/02/12 --- Mise en place du serveur IRC.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;11/02/12 --- Mise en pace de la base de donnée.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;15/01/12 --- Mise a jour de l'interface&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;10/02/12 --- Mise en place du serveur IRC.&lt;/span&gt;&lt;/p&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;10/02/12 --- Mise en pace de la base de donnée.&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
   </widget>

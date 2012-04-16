@@ -1,7 +1,7 @@
 #include "searchwidget.h"
 #include "ui_searchwidget.h"
 
-SearchWidget::SearchWidget(MyIRC *irc, ApiMovie *api, QWidget *parent) : _irc(irc),
+SearchWidget::SearchWidget(QTabWidget *tab, MyIRC *irc, ApiMovie *api, QWidget *parent) : _tab(tab), _irc(irc),
     _api(api),
     QWidget(parent),
     ui(new Ui::SearchWidget)
@@ -78,4 +78,5 @@ void SearchWidget::on_PlayTrailer_clicked()
 void SearchWidget::on_JoinChannel_clicked()
 {
     _irc->getController()->getSession()->sendCommand(_irc->getController()->getInputHandler()->createChan("#" + ui->Title->text().replace(' ', '-')));
+    _tab->setCurrentIndex(4);
 }
