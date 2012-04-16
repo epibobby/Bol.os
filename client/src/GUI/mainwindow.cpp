@@ -13,7 +13,8 @@ MainWindow::MainWindow(QWidget *parent) :
     _LMC = new LMC(this);
     _api = new ApiMovie();
     _SWMN = new StackedWidgetMovieNews(_api, this);
-    _searchWidget = new SearchWidget(_api);
+    MyIRC *myIrc = new MyIRC(ui->IRC);
+    _searchWidget = new SearchWidget(myIrc, _api);
     _SWMN->move(30, 360);
     QRect resolution = QApplication::desktop()->screenGeometry();
     move(0,0);
@@ -28,7 +29,6 @@ MainWindow::MainWindow(QWidget *parent) :
    // signalMapper2->setMapping(ui->PlayDayMovie, 2);
    // connect(signalMapper2, SIGNAL(mapped(int)), this, SLOT(_slotLMC(int)));
     connect(_api, SIGNAL(found(QList<QMap<QString, QString> >)), this, SLOT(IncomingSheet(QList<QMap<QString, QString> >)));
-     MyIRC *myIrc = new MyIRC(ui->IRC);
 }
 
 MainWindow::~MainWindow()

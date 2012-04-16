@@ -1,7 +1,7 @@
 #include "searchwidget.h"
 #include "ui_searchwidget.h"
 
-SearchWidget::SearchWidget(ApiMovie *api, QWidget *parent) :
+SearchWidget::SearchWidget(MyIRC *irc, ApiMovie *api, QWidget *parent) : _irc(irc),
     _api(api),
     QWidget(parent),
     ui(new Ui::SearchWidget)
@@ -73,4 +73,9 @@ void SearchWidget::on_Search_clicked()
 void SearchWidget::on_PlayTrailer_clicked()
 {
     QDesktopServices::openUrl(QUrl(this->trailer));
+}
+
+void SearchWidget::on_JoinChannel_clicked()
+{
+    _irc->getController()->getSession()->sendCommand(_irc->getController()->getInputHandler()->createChan("#" + ui->Title->text().replace(' ', '-')));
 }

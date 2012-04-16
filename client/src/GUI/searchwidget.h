@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QDesktopServices>
 #include "listmovies.h"
+#include "../IRC/myirc.h"
 
 namespace Ui {
     class SearchWidget;
@@ -21,7 +22,7 @@ class SearchWidget : public QWidget
     Q_OBJECT
 
 public:
-    explicit SearchWidget(ApiMovie *api, QWidget *parent = 0);
+    explicit SearchWidget(MyIRC *irc, ApiMovie *api, QWidget *parent = 0);
     ~SearchWidget();
     void UpdateMovie(Sheet sheet);
 
@@ -31,7 +32,10 @@ private slots:
 
     void on_PlayTrailer_clicked();
 
+    void on_JoinChannel_clicked();
+
 private:
+    MyIRC *_irc;
     ApiMovie *_api;
     Ui::SearchWidget *ui;
     ListMovies *_listMovies;
